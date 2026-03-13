@@ -1,0 +1,18 @@
+# =============================================
+# Module 01: LLM Foundations — Requirements
+# =============================================
+# Install with:  pip install -r module01_requirements.txt
+
+# ── Core (required) ──
+openai
+python-dotenv
+gradio
+tiktoken
+Pillow
+
+# ── Optional (for specific notebooks) ──
+anthropic          # 03_first_anthropic_call, 06_streaming
+litellm            # 04_compare_models
+requests           # web scraping examples
+beautifulsoup4     # web scraping examples
+ipykernel          # for notebooks
