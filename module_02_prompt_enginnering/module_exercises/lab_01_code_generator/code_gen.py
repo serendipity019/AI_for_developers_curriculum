@@ -106,14 +106,14 @@ def generate_code(description: str, with_tests: bool = False, save: str = None) 
     print(f"Generating code for: {description}")
     prompt = CODE_GENERATION_PROMPT.format(description=description)
 
-    raw_code = ask_anthropic(prompt, temperature= 0.2)
+    raw_code = ask_anthropic(prompt, temperature= 0.2, ai_model= CLAUDE_MODEL)
     code = clean_code_output(raw_code)
     result = {"code": code}
 
     if with_tests:
         print("Generating unit tests...")
         test_prompt = TEST_GENERATION_PROMPT.format(code=code)
-        raw_tests = ask_anthropic(test_prompt, temperature=0.2)
+        raw_tests = ask_anthropic(test_prompt, temperature=0.2, ai_model= CLAUDE_MODEL)
         tests = clean_code_output(raw_tests)
         result["tests"] = tests
 
