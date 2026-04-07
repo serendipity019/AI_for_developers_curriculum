@@ -22,7 +22,7 @@ from IPython.display import display, Markdown, clear_output
 from anthropic import Anthropic
 
 # Φόρτωση .env
-load_dotenv(Path.cwd().parent / "../../module_02_prompt_enginnering/.env")
+load_dotenv(Path.cwd() / ".env") # Modificate this path if the .env file isn't in the same file with the code_gen.py
 
 claude_client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 CLAUDE_MODEL = "claude-opus-4-6" 
