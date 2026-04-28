@@ -32,7 +32,7 @@ def home():
 
     return HTMLResponse(content=html)
 
-@app.get("/greet/{name}", response_class=HTMLResponse, tags=["Greet"])
+@app.get("/greet/{name}", response_class=HTMLResponse, tags=["Greet"]) #/greet/name?title=title
 def greet(name: str, title: str | None = None):
     display = f"{title} {name}" if title else name
     html = f'''
